@@ -112,11 +112,10 @@ export default function Navbar() {
               className="w-full max-w-[280px]"
             >
               <Link
-                to="/#contact" 
-                onClick={() => handleLinkClick('/#contact')}
+                to="https://tally.so/r/ZjRyGA" 
                 className="btn-primary text-center mt-6 w-full py-6 relative z-10 block"
               >
-                Book Strategy Call
+                Fill the Form
               </Link>
             </motion.div>
           </motion.div>
