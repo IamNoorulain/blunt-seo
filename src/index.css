@@ -14,14 +14,18 @@
 }
 
 @layer base {
-  * {
-    cursor: none !important;
+  @media (hover: hover) and (pointer: fine) {
+    * {
+      cursor: none !important;
+    }
+  
+    a,
+    button,
+    input,
+    textarea {
+      cursor: none !important;
+    }
   }
-
-  a, button, input, textarea {
-    cursor: none !important;
-  }
-
   body {
     @apply bg-black text-off-white font-sans antialiased selection:bg-neon-purple selection:text-white;
   }
@@ -90,6 +94,12 @@
   z-index: 99999;
   box-shadow: 0 0 10px var(--color-neon-purple);
   opacity: 0.8;
+}
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-glow {
+    display: none !important;
+  }
 }
 
 .custom-cursor-glow {

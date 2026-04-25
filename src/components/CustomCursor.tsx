@@ -2,16 +2,34 @@ import { motion, useMotionValue, useSpring } from 'motion/react';
 import { useEffect, useState } from 'react';
 
 export default function CustomCursor() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  
+
   const springConfig = { damping: 20, stiffness: 1000, mass: 0.5 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
-  const [isVisible, setIsVisible] = useState(false);
+  useEffect(() => {
+    const checkDevice = () => {
+      const desktop =
+        window.matchMedia('(min-width: 1024px)').matches &&
+        window.matchMedia('(pointer: fine)').matches;
+
+      setIsDesktop(desktop);
+    };
+
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+
+    return () => window.removeEventListener('resize', checkDevice);
+  }, []);
 
   useEffect(() => {
+    if (!isDesktop) return;
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
@@ -23,7 +41,9 @@ export default function CustomCursor() {
     return () => {
       window.removeEventListener('mousemove', moveCursor);
     };
-  }, [cursorX, cursorY]);
+  }, [isDesktop, cursorX, cursorY]);
+
+  if (!isDesktop) return null;
 
   return (
     <>
@@ -36,9 +56,10 @@ export default function CustomCursor() {
           translateY: cursorYSpring,
           left: -10,
           top: -10,
-          zIndex: 999999
+          zIndex: 999999,
         }}
       />
+
       <motion.div
         className="custom-cursor-glow"
         initial={{ opacity: 0 }}
@@ -48,7 +69,7 @@ export default function CustomCursor() {
           translateY: cursorYSpring,
           left: -20,
           top: -20,
-          zIndex: 999998
+          zIndex: 999998,
         }}
       />
     </>
