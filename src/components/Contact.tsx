@@ -23,12 +23,12 @@ export default function Contact() {
 
             <div className="pt-8 border-t border-border-gray/50">
               <p className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted-gray mb-4">Direct Channel</p>
-              <a href="mailto:hello@bluntseo.com" className="flex items-center gap-4 group">
+              <a href="mailto:sales@bluntseo.com" className="flex items-center gap-4 group">
                 <div className="w-10 h-10 shrink-0 rounded-sm border border-border-gray flex items-center justify-center group-hover:bg-off-white group-hover:text-black transition-all">
                     <Mail size={18} />
                 </div>
                 <div className="text-xs md:text-sm font-bold uppercase tracking-widest text-off-white group-hover:text-neon-purple transition-colors overflow-hidden text-ellipsis whitespace-nowrap text-left">
-                  hello@bluntseo.com
+                  sales@bluntseo.com
                 </div>
               </a>
             </div>

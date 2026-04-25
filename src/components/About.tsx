@@ -13,7 +13,7 @@ export default function About() {
             className="aspect-square sm:aspect-[4/5] md:aspect-video lg:aspect-auto lg:h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-border-gray bg-surface"
           >
             <img 
-              src='\CEO.png'
+              src='/CEO.png'
               alt="Noor - Founder"
               className="w-full h-full object-cover "
               referrerPolicy="no-referrer"

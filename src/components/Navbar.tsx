@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="max-w-[1440px] h-full w-full mx-auto px-6 md:px-[40px] flex items-center justify-between">
       <Link to="/#" className="flex items-center">
   <img
-    src="\logo.png"
+    src="/logo.png"
     alt="Blunt SEO"
     className="h-8 md:h-10 w-auto"
   />

@@ -7,7 +7,7 @@ export default function Footer() {
         <div >
         <Link to="/#" className="flex items-center">
   <img
-    src="\logo.png"
+    src="/logo.png"
     alt="Blunt SEO"
     className="h-8 md:h-10 w-auto"
   />

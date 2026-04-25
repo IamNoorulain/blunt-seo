@@ -59,7 +59,7 @@ export default function PrivacyPolicy() {
       04. Contact
     </h2>
     <p>
-      For any questions related to data handling, contact <span className="text-neon-purple">hello@bluntseo.com</span>. We respond to relevant operational queries.
+      For any questions related to data handling, contact <span className="text-neon-purple">info@bluntseo.com</span>. We respond to relevant operational queries.
     </p>
   </section>
 
